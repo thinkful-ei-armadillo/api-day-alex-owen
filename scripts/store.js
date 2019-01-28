@@ -48,10 +48,15 @@ const store = (function(){
     Object.assign(obj, newData);
   }
 
+  const addErrorToDom = function(errorMessage) {
+    this.error = errorMessage;
+  }
+
   return {
     items: [],
     hideCheckedItems: false,
     searchTerm: '',
+    error: null,
 
     addItem,
     findById,
@@ -59,7 +64,8 @@ const store = (function(){
     toggleCheckedFilter,
     setSearchTerm,
     setItemIsEditing,
-    findAndUpdate
+    findAndUpdate,
+    addErrorToDom
   };
   
 }());
